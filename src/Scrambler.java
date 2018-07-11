@@ -7,24 +7,28 @@ public class Scrambler {
 	
 	public static void scramble() {
 		
-		String[] scramble = new String[] {"R","Rp","L","Lp","U","Up","D","Dp","B","Bp","F","Fp"};
+		String[] moves = new String[] {"R","L","U","D","B","F","R2","L2","U2","D2","B2","F2","Rp","Lp","Up","Dp","Bp","Fp"};
+		
 		List result = new  ArrayList<String>();
 		int i = 0;
+		int holder = 0;
 			
 		while(i < 20) {
 			
-			double rand = Math.random() * scramble.length - 1;
+			double rand = Math.random() * moves.length - 1;
 			int randGen = (int)(rand);
 			
-			List<String> move = Arrays.asList(scramble[randGen]);
+			if(holder == randGen) {
+				continue;
+			}
 			
+			List<String> move = Arrays.asList(moves[randGen]);
 			
+			holder = randGen;
 			result.add(move);
 			i++;
-			
 		}
 		
-		
-		System.out.println( result.get(result.size() - 1) );
+		System.out.println( result );
 	}
 }
