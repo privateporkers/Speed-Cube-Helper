@@ -3,17 +3,19 @@ import java.awt.event.KeyListener;
 
 public class KeyPressed implements KeyListener {
 	Timer time = new Timer();
+	Scrambler scram = new Scrambler();
 	private int counter = 0;
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		//System.out.println("pressed: " + e.getKeyCode() );
 		
 		int key = e.getKeyCode();
 		if(key == 32 && counter == 1) {
 			time.stop();
 			time.timeResult();
 			counter = 0;
+			//creates a new scramble after every solve/completed time
+			scram.scramble();
 		}
 	}
 
@@ -30,8 +32,6 @@ public class KeyPressed implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		//System.out.println("Typed: " + e.getKeyChar() );
-
 	}
 
 }
