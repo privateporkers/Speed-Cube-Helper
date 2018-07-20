@@ -9,10 +9,10 @@ public class KeyPressed implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		//System.out.println("pressed: " + e.getKeyCode() );
 		
-		int test = e.getKeyCode();
-		if(test == 32 && counter == 1) {
+		int key = e.getKeyCode();
+		if(key == 32 && counter == 1) {
 			time.stop();
-			System.out.println(time.timeResult());
+			time.timeResult();
 			counter = 0;
 		}
 	}

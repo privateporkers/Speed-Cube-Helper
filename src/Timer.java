@@ -21,12 +21,26 @@ public class Timer {
 		this.isRunning = false;
 	}
 	
-	public long timeResult() {
-		long result;
+	public void timeResult() {
+		long time;
 		
-		result = (endTime - startTime) / 10000000;
+		time = (endTime - startTime) / 10000000;
 		
-		return result;
+		String result = Long.toString(time);
+		String firstDigits = "";
+		String milisec = "";
+		
+		
+		if(result.length() % 2 == 0) {
+			firstDigits = result.substring(0,2);
+			milisec = result.substring(2);
+		} else {
+			firstDigits = result.substring(0,1);
+	    	milisec = result.substring(1);
+		}
+		
+		System.out.println("Your time: " + firstDigits + "." + milisec);
+		
 	}
 	
 	
