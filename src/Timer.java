@@ -44,8 +44,6 @@ public class Timer {
 		
 		//prints out the time
 		System.out.println("Your time: " + firstDigits + "." + milisec);
-		
 	}
-	
 	
 }

@@ -5,7 +5,8 @@ public class KeyPressed implements KeyListener {
 	Timer time = new Timer();
 	Scrambler scram = new Scrambler();
 	private int counter = 0;
-
+	
+	//Gets the Space Bar key after completed solve as soon as its pressed
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
@@ -18,7 +19,8 @@ public class KeyPressed implements KeyListener {
 			scram.scramble();
 		}
 	}
-
+	
+	//Gets the key code for any key except the Space Bar key to start the time once released
 	@Override
 	public void keyReleased(KeyEvent e) {
 		
@@ -29,7 +31,8 @@ public class KeyPressed implements KeyListener {
 			counter++;
 		}
 	}
-
+	
+	//Keep for right now, should remove in future if not used
 	@Override
 	public void keyTyped(KeyEvent e) {
 	}
